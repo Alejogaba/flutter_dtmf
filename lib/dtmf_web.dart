@@ -26,12 +26,14 @@ class DtmfPlugin extends DtmfPlatform {
       {required String digits,
       int? durationMs,
       double? samplingRate,
-      double? volume}) async {
+      double? volume,
+      bool? forceMaxVolume}) async {
     var dtmf = DTMF();
     return await dtmf.playTone(
         digits: digits,
         durationMs: durationMs,
         samplingRate: samplingRate,
-        volume: volume);
+        volume: volume,
+        forceMaxVolume: forceMaxVolume);
   }
 }
